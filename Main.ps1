@@ -2,6 +2,7 @@ $invocation = (Get-Variable MyInvocation).Value
 $directorypath = Split-Path $invocation.MyCommand.Path
  
 [xml]$config = Get-Content $directorypath"\libraries.xml"
+
  
 foreach($library in $config.libraries.library){
     $web = Get-SPWeb $library.web
